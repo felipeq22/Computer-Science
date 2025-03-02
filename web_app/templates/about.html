@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ heading }}'s Website</title>
+    <meta name="description" content="Personal page of {{ heading }}">
+    <meta name="keywords" content="{{ heading }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: black; 
+            color: white; 
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 70%;
+            object-fit: cover;
+            margin-top: 20px;
+        }
+        .description {
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .link {
+            font-size: 18px;
+            color: #0073e6;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        figure {
+            margin: 20px auto;
+            text-align: center;
+            margin-bottom: 40px; /* Adds space below the subtitle */
+        }
+        figcaption {
+            font-size: 16px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>{{ heading }}</h1>
+
+    <figure>
+        <img src="{{ url_for('static', filename=image_url) }}">
+        <figcaption>{{ subtitle }}</figcaption> 
+    </figure>
+
+    <p class="description">
+        {{ description }}
+    </p>
+
+    <a href="{{ linkedin_url }}" class="link" target="_blank">LinkedIn</a>
+
+</body>
+</html>
